@@ -1,12 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ToDo List</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='10' y='10' width='80' height='80' rx='12' fill='%232D2D2D'/%3E%3Crect x='20' y='20' width='60' height='12' rx='3' fill='%23FFFFFF' opacity='0.95'/%3E%3Crect x='20' y='38' width='60' height='12' rx='3' fill='%23FFFFFF' opacity='0.95'/%3E%3Crect x='20' y='56' width='60' height='12' rx='3' fill='%23FFFFFF' opacity='0.95'/%3E%3Cpath d='M28 44 l6 6 l12 -12' stroke='%232D2D2D' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E"
+        type="image/svg+xml">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 <body>
-    Hello World
-    
+    <div class="wrap">
+        <div class="card" role="region" aria-labelledby="title">
+            <div class="header">
+                <h1 id="title">✅ ToDo List</h1>
+            </div>
+            <p class="lead">Stay organized and productive. Add tasks, mark them complete, or delete when done.</p>
+
+            <div class="input-group">
+                <input type="text" id="taskInput" placeholder="Add a new task..." aria-label="Enter task" />
+                <button class="btn" id="addBtn" onclick="addTask()">Add Task</button>
+            </div>
+
+            <div class="stats" aria-live="polite">
+                <div class="stat-pill">Total: <strong id="totalCount">0</strong></div>
+                <div class="stat-pill">Completed: <strong id="completedCount">0</strong></div>
+                <div class="stat-pill">Pending: <strong id="pendingCount">0</strong></div>
+            </div>
+
+            <ul id="taskList" aria-label="Todo list" role="list">
+                <!-- tasks injected here -->
+            </ul>
+
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <div class="empty-state-icon">🎉</div>
+                <div>No tasks yet. Add one to get started!</div>
+            </div>
+
+            <div class="footer">Press Enter to add task quickly. Click the checkbox to mark as complete.</div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="js/script.js"></script>
 </body>
+
 </html>
